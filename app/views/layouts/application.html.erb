@@ -10,14 +10,19 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
-    <div class="container">
-      <% flash.each do |message_type, message| %>
-        <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
-      <% end %>
-      <%= yield %>
-      <%= render "layouts/footer" %>
-    </div>
-
+    <% if logged_in? &&  current_user.admin? %>
+      <div id="wrapper">
+        <%= render "layouts/admin/side_bar" %> 
+      </div>
+    <% else %>
+      <%= render "layouts/header" %>
+      <div class="container">
+        <% flash.each do |message_type, message| %>
+          <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+        <% end %>
+        <%= yield %>
+        <%= render "layouts/footer" %>
+      </div>
+    <% end %>
   </body>
 </html>

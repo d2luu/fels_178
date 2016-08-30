@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  
   has_many :activities, dependent: :destroy
   has_many :lessons, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
@@ -11,13 +13,13 @@ class User < ApplicationRecord
   enum role: {admin: 1, student: 0}
 
   before_save :downcase_email
-
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  has_secure_password
+  
   validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :name, presence: true, length: {maximum: 50}
   validates :password_digest, presence: true, length: {minimum: 1}
-  has_secure_password
+  
 
   private
   def downcase_email
