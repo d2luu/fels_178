@@ -24,6 +24,6 @@ class UsersController < ApplicationController
       :password_confirmation
   end
   def find_user
-    @user = User.find_by :id params[:id]
+    @user = User.find_by_id params[:id]
   end
 end

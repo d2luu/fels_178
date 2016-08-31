@@ -24,10 +24,24 @@ en:
 
   login_page:
     new_user: "Don't have account?"
+    init: "Welcome E-Learning"
 
   footer:
-    page_name: "E Learning System"
+    page_name: "E - Learning System"
 
   button_text: "Save change"
   button_create: "Create my account"
   button_signup: "Sign up now!"
+  flash:
+    not_admin: "You are not admin"
+  dash_board: "Dash board"
+  user: "User"
+  account: "Account"
+
+  navbar:
+    user: "User"
+    new_category: "New category"
+    index_category: "All category"
+    word: "Word"
+    new_word: "New word"
+    index_word: "All word"
