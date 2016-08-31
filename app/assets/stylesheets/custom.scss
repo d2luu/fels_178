@@ -150,3 +150,35 @@ input {
     color: $state-danger-text;
   }
 }
+.admin {
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  .admin-content {
+    padding-top: 50px;
+    .lm-category {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background: rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+      .lm-img {
+        margin: 0 auto;
+        display: block;
+        height: 230px;
+        width: 95%;
+      }
+      .lm-cate-name {
+        margin-top: 20px;
+        a {
+          color: #FFF;
+          font-weight: bold;
+        }
+        a:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+h1, h2, h3 {
+  margin-top: 0px !important;
+}
