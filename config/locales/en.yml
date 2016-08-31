@@ -45,3 +45,10 @@ en:
     word: "Word"
     new_word: "New word"
     index_word: "All word"
+  categories:
+    new_category: "New category"
+    create: "Create"
+    create_fails: "Create fails"
+    success: "Create success"
+    all_category: "All category"
+    empty: "Category is not found"

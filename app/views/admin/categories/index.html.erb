@@ -1,0 +1,17 @@
+<% provide :title, t("categories.all_category") %>
+<div class="admin-index-category">
+	<h1 class="text-center"><%= t "header.category" %></h1>
+  <div><%= will_paginate %></div>
+	<% @categories.each do |category| %>
+	  <div class="col-sm-4">
+	    <div class="lm-category">
+	      <%= link_to admin_category_path(category) do %>
+	        <%= image_tag "category.jpg", class: "text-center lm-img" %>
+	      <% end %>
+	    <p class="text-center lm-cate-name">
+	    	<%= link_to category.name, admin_category_path(category) %>
+	    </p>
+	    </div>
+	  </div>
+	<% end %>
+</div>
