@@ -1,4 +1,12 @@
 <% provide :title, @category.name %>
 <div class="col-sm-3">
   <h1><%= @category.name %></h1>
+  <h3><%= @category.description %></h3>
+  <div class="text-center">
+    <%= link_to t("edit"), edit_admin_category_path(@category),
+      class: "btn btn-primary" %>
+    <%= link_to t("delete"), admin_category_path(@category),
+      method: :delete, data: {confirm: t("flash.confirm")},
+      class: "btn btn-danger" %>
+  </div>
 </div>

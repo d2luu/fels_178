@@ -34,6 +34,8 @@ en:
   button_signup: "Sign up now!"
   flash:
     not_admin: "You are not admin"
+    fail: "Update fail"
+    confirm: "Are you sure?"
   dash_board: "Dash board"
   user: "User"
   account: "Account"
@@ -47,8 +49,13 @@ en:
     index_word: "All word"
   categories:
     new_category: "New category"
-    create: "Create"
+    create: "Submit"
     create_fails: "Create fails"
     success: "Create success"
     all_category: "All category"
     empty: "Category is not found"
+    edit: "Edit category"
+    update: "Update success"
+    deleted: "Deleted success"
+  edit: "Edit"
+  delete: "Delete"
