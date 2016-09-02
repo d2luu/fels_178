@@ -6,7 +6,7 @@ en:
     all_user: "All user"
     language: "Language"
     login: "Log In"
-    logout: "logout"
+    logout: "Logout"
     setting: "Setting"
     profile: "Profile"
     account: "Account"
@@ -16,6 +16,10 @@ en:
     init: "Welcome E Learning"
     notice: "Invalid email/password combination"
     error: "Error"
+    not_learned: "Not learned"
+    learned: "Learned"
+    all_word: "All word"
+    search: "Search"
 
   signup_page:
     signup: "Sign up"
