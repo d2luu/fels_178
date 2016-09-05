@@ -12,7 +12,7 @@
   <body>
     <% if logged_in? &&  current_user.admin? %>
       <div id="wrapper">
-        <%= render "layouts/admin/side_bar" %> 
+        <%= render "layouts/admin/side_bar" %>
       </div>
       <div class="admin">
         <% flash.each do |message_type, message| %>
@@ -29,8 +29,8 @@
           <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
         <% end %>
         <%= yield %>
-        <%= render "layouts/footer" %>
       </div>
+      <%= render "layouts/footer" %>
     <% end %>
   </body>
 </html>

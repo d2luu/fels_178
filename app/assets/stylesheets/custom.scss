@@ -3,6 +3,10 @@
 
 /* universal */
 
+body {
+  padding-top: 120px;
+}
+
 section {
   overflow: auto;
 }
@@ -63,10 +67,14 @@ $gray-medium-light: #eaeaea;
 
 /*footer*/
 footer {
+  width: 100%;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
   a {
     color: $gray;
     &:hover {
@@ -89,7 +97,7 @@ footer {
 /*sidebar*/
 
 aside {
-  section.user_infor {
+  section.user-infor {
     margin-top: 20px;
   }
   section {
@@ -150,6 +158,7 @@ input {
     color: $state-danger-text;
   }
 }
+
 .admin {
   width: calc(100% - 250px);
   margin-left: 250px;
@@ -181,4 +190,30 @@ input {
 }
 h1, h2, h3 {
   margin-top: 0px !important;
+}
+
+.td-word-condition {
+  width: 100%;
+  display: inline-block;
+}
+.fl-div-word {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.search-form {
+  form {
+    width: 100%;
+    input[type = "text"] {
+      @extend .form-control;
+    }
+    input[type = "submit"] {
+      @extend .btn;
+      @extend .btn-primary;
+      width: 200px;
+    }
+  }
+}
+.user-infor {
+  margin-top: 20px;
 }
