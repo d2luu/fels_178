@@ -1,2 +1,5 @@
 page: 6
 word_page: 10
+filters: ["learned", "not_learned", "all_word"]
+number_of_answers: 4
+page_size: 5

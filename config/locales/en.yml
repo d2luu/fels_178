@@ -78,3 +78,22 @@ en:
   login_warning: "Please log in"
   notice:
     not_category: "Can't find category"
+  words:
+    not_found: "Word not found"
+    new_word: "New word"
+  create: "Create"
+  answer: "Answer"
+  check_true: "Check if answer is true"
+  new_answer: "New Answer"
+  created_word: "Word has been created"
+  all_words: "All words"
+  word:
+    content: "Word"
+    category: "Category"
+    created_at: "Created at"
+    update_at: "Update at"
+  show_word: "Word"
+  no_word_in_category: "No word in category"
+  destroy_sucess: "Destroy success"
+  sure: "Are you sure?"
+  create_fail: "Create fail"

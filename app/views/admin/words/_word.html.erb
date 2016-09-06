@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to word.category.name,
+    admin_category_path(word.category) %></td>
+  <td><%= link_to word.content, admin_word_path(word) %></td>
+  <td class="dn-action-padding">
+    <%= link_to t(:edit), edit_admin_word_path(word), class: "btn btn-primary" %>
+    <%= link_to t(:delete), [:admin, word], method: :delete, data: {confirm: t(:sure)},
+      class: "btn btn-danger btn-primary" %>
+  </td>
+</tr>
