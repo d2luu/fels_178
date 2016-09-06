@@ -1,35 +1,19 @@
-<div class="row">
-  <%= render "shared/show_user" %>
-  <aside class="col-md-8">
-    <h1><%= t "header.word" %></h1>
-
-    <div class="search-form">
-      <%= form_tag "/search", method: "get" do |f| %>
-        <div class="col-md-10 fl-div-word">
-          <% Settings.filters.each do |filter| %>
-            <div class="col-sm-4">
-              <span><%= check_box_tag filter.to_s %></span>
-              <span class="text-center td-word-condition">
-                <%= label_tag filter.to_s, t("containt.#{filter}") %>
-              </span>
-            </div>
-          <% end %>
-        </div>
-        <%= text_field_tag :search %>
-        <%= submit_tag t "containt.search" %>
-      <% end %>
-    </div>
-
-    <table class="user-infor table table-striped">
-      <thead>
-        <tr>
-          <th><%= t "header.word" %></th>
-          <th><%= t "header.category" %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render @words %>
-      </tbody>
-    </table>
-  </aside>
-</div>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-10 col-md-offset-1">
+      <h3><%= t "header.word" %></h3>
+      <%= render "search_word" %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th><%= t "header.word" %></th>
+            <th><%= t "header.category" %></th>
+          </tr>
+        </thead>
+        <tbody id="index-word">
+          <%= render @words %>
+        </tbody>
+      </table>
+    </aside>
+  </div>
+<% end %>
