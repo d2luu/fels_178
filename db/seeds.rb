@@ -11,3 +11,36 @@ admin = User.create name: "admin",
   password: "1",
   password_confirmation: "1",
   role: 1
+User.create name: "duong",
+  email: "1@gmail.com",
+  password: "1",
+  password_confirmation: "1"
+Category.create name: "Tieng anh",
+  description: "Tieng anh"
+
+Category.create name: "Dong vat",
+  description: "Dong vat"
+
+Word.create content: "hello",
+  category_id: "1"
+
+Word.create content: "hi",
+  category_id: "1"
+
+Word.create content: "test",
+  category_id: "1"
+
+Answer.create word_id: "1",
+  is_correct: "true"
+
+Answer.create word_id: "1",
+  is_correct: "false"
+
+Lesson.create user_id: "2",
+  category_id: "1"
+
+Result.create lesson_id: "1",
+  word_id: "1",
+  answer_id: "1"
+
+
