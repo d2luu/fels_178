@@ -1,0 +1,17 @@
+<% provide :title, t("categories.all_category") %>
+<h1 class="text-center"><%= t "header.category" %></h1>
+<div class="index-category">
+  <aside class="col-md-10 col-md-offset-1">
+    <%= render "search_category" %>
+    <% @categories.each do |category| %>
+      <div class="col-sm-4 category-style">
+        <div class="lm-category w3-quarter w3-container w3-margin-bottom">
+          <%= image_tag "category.jpg", class: "text-center lm-img" %>
+        </div>
+        <p class="text-center lm-cate-name">
+          <%= link_to category.name, category %>
+        </p>
+      </div>
+    <% end %>
+  </aside>
+</div>

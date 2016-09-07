@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :words, only: [:index]
+  resources :words, only: :index
+
+  resources :categories, only: [:show, :index]
 
   namespace :admin do
     root controller: :static_pages, action: :home, as: :root

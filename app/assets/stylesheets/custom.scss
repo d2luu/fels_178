@@ -3,10 +3,6 @@
 
 /* universal */
 
-body {
-  padding-top: 120px;
-}
-
 section {
   overflow: auto;
 }
@@ -41,6 +37,7 @@ h2 {
   text-align: center;
   font-weight: normal;
   color: gray-light;
+  font-weight: 400;
 }
 p {
   font-size: 1.1em;
@@ -216,4 +213,24 @@ h1, h2, h3 {
 }
 .user-infor {
   margin-top: 20px;
+}
+.td-body {
+  margin-top: 55px;
+}
+
+.lm-category {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+  .lm-img {
+    margin: 0 auto;
+    display: block;
+    height: 230px;
+    width: 95%;
+  }
+}
+.td-btn {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

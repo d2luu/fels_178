@@ -8,6 +8,7 @@ class WordsController < ApplicationController
     else
       Word.all
     end
+    @words = @words.paginate page: params[:page], per_page: Settings.word_page
     respond_to do |format|
       format.html
       format.js
