@@ -1,0 +1,20 @@
+<h3><%= @lesson.category_name %></h3>
+<div class="col-md-10 col-md-offset-1 ">
+  <%= form_for @lesson do |f| %>
+    <ol>
+      <%= f.hidden_field :lesson_id, value: @lesson.id %>
+      <%= f.fields_for :results do |t| %>
+        <li><%= t.label t.object.word_content %></li>
+        <div class="row">
+          <% t.object.word.answers.each do |answer| %>
+            <div class="col-md-8 col-md-offset-2">
+              <%= answer.content %>
+              <%= t.radio_button :answer_id, answer.id %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </ol>
+    <%= f.submit t("lesson.submit_btn"),class: "btn btn-primary"%>
+  <% end %>
+</div>

@@ -31,10 +31,12 @@ Word.create content: "test",
   category_id: "1"
 
 Answer.create word_id: "1",
-  is_correct: "true"
+  is_correct: "true",
+  content: "hello"
 
 Answer.create word_id: "1",
-  is_correct: "false"
+  is_correct: "false",
+  content: "helo"
 
 Lesson.create user_id: "2",
   category_id: "1"

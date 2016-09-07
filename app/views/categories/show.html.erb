@@ -2,7 +2,10 @@
 <h3><%= @category.name %></h3>
 <div class="show-category">
   <div class="text-center td-btn">
-    <%= link_to t("containt.do_lesson"), "#", class: "btn btn-primary" %>
+    <%= form_for @lesson do |f| %>
+      <%= f.hidden_field :category_id, value: @category.id %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
   </div>
   <aside class="col-md-10 col-md-offset-1 ">
     <table class="table table-bordered">

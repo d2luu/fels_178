@@ -1,8 +1,7 @@
 class Word < ApplicationRecord
   belongs_to :category
   delegate :name, to: :category, prefix: true, allow_nil: true
-  has_many :answers, dependent: :destroy
-  has_many :results, dependent: :destroy
+  has_many :results, dependent: :destroy, inverse_of: :word
   has_many :answers, dependent: :destroy, inverse_of: :word
   has_many :lessons, through: :results
 
@@ -11,6 +10,8 @@ class Word < ApplicationRecord
 
   accepts_nested_attributes_for :answers,
     reject_if: lambda {|a| a[:content].blank?}, allow_destroy: true
+
+  scope :random, ->{order "RAND()"}
 
   QUERY_LEARNED = "id in (select results.word_id from
     results join lessons on results.lesson_id = lessons.id
