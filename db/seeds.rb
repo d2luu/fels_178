@@ -43,4 +43,11 @@ Result.create lesson_id: "1",
   word_id: "1",
   answer_id: "1"
 
+40.times do |n|
+  name  = Faker::Name.name
+  email = "user-#{n+1}@gmail.com"
+  password = "1"
+  User.create! name: name, email: email, password: password,
+    password_confirmation: password
+end
 

@@ -13,6 +13,7 @@ gem "jbuilder", "2.4.1"
 gem "will_paginate", "3.1.0"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "config"
+gem "faker", "1.4.2"
 
 group :development, :test do
   gem "mysql2"
