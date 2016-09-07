@@ -15,6 +15,7 @@ User.create name: "duong",
   email: "1@gmail.com",
   password: "1",
   password_confirmation: "1"
+
 Category.create name: "Tieng anh",
   description: "Tieng anh"
 
@@ -27,16 +28,60 @@ Word.create content: "hello",
 Word.create content: "hi",
   category_id: "1"
 
+Word.create content: "nice",
+  category_id: "1"
+
+Word.create content: "Shine",
+  category_id: "1"
+
+Word.create content: "Find",
+  category_id: "1"
+
 Word.create content: "test",
   category_id: "1"
 
 Answer.create word_id: "1",
   is_correct: "true",
   content: "hello"
-
 Answer.create word_id: "1",
   is_correct: "false",
   content: "helo"
+
+Answer.create word_id: "2",
+  is_correct: "false",
+  content: "hie"
+Answer.create word_id: "2",
+  is_correct: "true",
+  content: "hi"
+
+Answer.create word_id: "3",
+  is_correct: "true",
+  content: "nice"
+Answer.create word_id: "3",
+  is_correct: "false",
+  content: "nie"
+
+Answer.create word_id: "4",
+  is_correct: "false",
+  content: "shie"
+Answer.create word_id: "4",
+  is_correct: "true",
+  content: "shine"
+
+Answer.create word_id: "5",
+  is_correct: "false",
+  content: "fin"
+
+Answer.create word_id: "5",
+  is_correct: "true",
+  content: "find"
+
+Answer.create word_id: "6",
+  is_correct: "false",
+  content: "te"
+Answer.create word_id: "6",
+  is_correct: "true",
+  content: "test"
 
 Lesson.create user_id: "2",
   category_id: "1"
@@ -44,6 +89,7 @@ Lesson.create user_id: "2",
 Result.create lesson_id: "1",
   word_id: "1",
   answer_id: "1"
+
 
 40.times do |n|
   name  = Faker::Name.name

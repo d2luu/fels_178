@@ -7,9 +7,12 @@ class Lesson < ApplicationRecord
 
   delegate :name, to: :category, prefix: true, allow_nil: true
   after_create :create_result_for_lesson
-  enum status: [:init, :testing, :finished]
-  accepts_nested_attributes_for :results,
-    reject_if: lambda {|a| a[:content].blank?}, allow_destroy: true
+  enum status: [:init, :finished]
+  accepts_nested_attributes_for :results, allow_destroy: true
+
+  def count_answer
+    results.select{|result| result.answer && result.answer.is_correct?}.size
+  end
 
   private
   def create_result_for_lesson

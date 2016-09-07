@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160830033506) do
     t.integer  "user_id"
     t.integer  "category_id"
     t.integer  "status",      default: 0
+    t.integer  "score",       default: 0
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.index ["category_id"], name: "index_lessons_on_category_id", using: :btree
