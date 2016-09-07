@@ -4,7 +4,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-            <li><%= link_to t("header.category"), "#" %></li>
+            <li><%= link_to t("header.category"), categories_path %></li>
             <li><%= link_to t("header.word"), words_path %></li>
             <li><%= link_to t("header.lession"), "#" %></li>
             <li class="dropdown">

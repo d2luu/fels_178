@@ -1,0 +1,20 @@
+<h1 class="text-center"><%= t "header.category" %></h1>
+<h3><%= @category.name %></h3>
+<div class="show-category">
+  <div class="text-center td-btn">
+    <%= link_to t("containt.do_lesson"), "#", class: "btn btn-primary" %>
+  </div>
+  <aside class="col-md-10 col-md-offset-1 ">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t "header.word" %></th>
+          <th><%= t "header.answer" %></th>
+        </tr>
+      </thead>
+      <tbody id="show-category">
+        <%= render @words %>
+      </tbody>
+    </table>
+  </aside>
+</div>

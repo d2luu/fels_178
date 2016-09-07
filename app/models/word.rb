@@ -2,6 +2,7 @@ class Word < ApplicationRecord
   belongs_to :category
   delegate :name, to: :category, prefix: true, allow_nil: true
   has_many :answers, dependent: :destroy
+  has_many :results, dependent: :destroy
   has_many :lessons, through: :results
 
   enum search_word: [:all_word, :learned, :not_learned]
@@ -41,6 +42,8 @@ class Word < ApplicationRecord
         learned user_id
       elsif type =="not_learned"
         not_learned user_id
+      else
+        all
       end
     end
   end

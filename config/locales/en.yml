@@ -11,6 +11,8 @@ en:
     profile: "Profile"
     account: "Account"
     home: "Home"
+    answer: "Correct answer"
+    status: "Status"
 
   containt:
     init: "Welcome E Learning"
@@ -21,12 +23,15 @@ en:
     all_word: "All word"
     search: "Search"
     filter: "Filter"
+    do_lesson: "Do lesson"
 
   word:
     search_word:
       not_learned: "Not learned"
       learned: "Learned"
       all_word: "All word"
+  lesson:
+    save: "Save"
 
   signup_page:
     signup: "Sign up"
@@ -70,3 +75,6 @@ en:
     deleted: "Deleted success"
   edit: "Edit"
   delete: "Delete"
+  login_warning: "Please log in"
+  notice:
+    not_category: "Can't find category"
