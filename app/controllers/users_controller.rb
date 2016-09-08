@@ -23,7 +23,12 @@ class UsersController < ApplicationController
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
   end
+
   def find_user
     @user = User.find_by_id params[:id]
+    if @user.nil?
+      redirect_to root_path
+      flash[:danger] = t :user_fails
+    end
   end
 end

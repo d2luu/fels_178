@@ -1,0 +1,32 @@
+class Admin::UsersController < ApplicationController
+  before_action :verify_admin
+  before_action :find_user, only: :destroy
+
+  def index
+    @users = User.paginate page: params[:page], per_page: Settings.page_size
+  end
+
+  def destroy
+    if current_user? @user
+      flash[:danger] = t :delete_self
+    else
+      @user.destroy
+      flash[:success] = t :destroy_sucess
+    end
+    redirect_to admin_users_path
+  end
+
+  private
+  def user_params
+    params.require(:user).permit :name, :email, :password,
+      :password_confirmation, :avatar
+  end
+
+  def find_user
+    @user = User.find_by_id params[:id]
+    if @user.nil?
+      flash[:danger] = t :user_fails
+      redirect_to admin_users_path
+    end
+  end
+end

@@ -1,6 +1,6 @@
 module WordsHelper
   def add_answer_link name, association, target
-    content_tag :spam, "<a>#{name}</a>".html_safe,
+    content_tag :span, "<a>#{name}</a>".html_safe,
       class: "add_answer",
       "data-association": association,
       target: target

@@ -33,6 +33,19 @@ class Admin::WordsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @word.update_attributes word_params
+      flash[:success] = t :word_updated
+      redirect_to admin_word_path @word
+    else
+      flash[:danger] = t "flash.fail"
+      render :edit
+    end
+  end
+
   def destroy
     if @word.destroy
       flash[:success] = t :destroy_sucess
