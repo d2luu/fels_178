@@ -54,4 +54,13 @@ class Word < ApplicationRecord
       end
     end
   end
+
+  def check_have_correct_answer
+    self.answers.each do |answer|
+      if answer.is_correct?
+        return true
+      end
+    end
+    false
+  end
 end
