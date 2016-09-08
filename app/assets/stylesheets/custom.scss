@@ -151,7 +151,7 @@ input {
 
 .field_with_errors {
   @extend .has-error;
-  .form-control{
+  .form-control {
     color: $state-danger-text;
   }
 }
@@ -214,6 +214,7 @@ h1, h2, h3 {
 .user-infor {
   margin-top: 20px;
 }
+
 .td-body {
   margin-top: 55px;
 }
@@ -230,7 +231,88 @@ h1, h2, h3 {
     width: 95%;
   }
 }
+
 .td-btn {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.removable {
+  padding-left: 0!important;
+}
+
+.input-group-addon {
+  border-radius:0;
+  border-color:#d2d6de;
+  background-color:#fff
+}
+
+.dn-admin-addon {
+  background-color: #eeeeee!important;
+}
+
+todo-list>li>input[type="checkbox"] {
+  margin:0 10px 0 5px
+}
+
+.inline {
+  display:inline
+}
+
+.dn-admin-word-check {
+  margin: 0 20px !important;
+}
+
+.dn-admin-wordanswer-check {
+  width: 40px;
+}
+
+.dn-admin-cate-select {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px #e2e2e2 inset;
+}
+
+.dn-admin-word-label {
+  display: block !important;
+}
+
+.dn-cate-new {
+  select {
+    @extend .dn-admin-cate-select;
+    background-color: #fff;
+  }
+}
+
+.dn-admin-word-content, .dn-admin-word-btn {
+  width: 98% !important;
+}
+
+.dn-admin-cate-form label {
+  width: 150px;
+  float: left;
+  display: block;
+  a {
+    margin-top: 10px!important;
+  }
+}
+
+.dn-admin-cate-select {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px #e2e2e2 inset;
+}
+
+.answers_field ul li {
+  list-style: none;
+}
+
+.btn-sm {
+  padding-left:38px;
+}
+
+.action {
+  width: 150px;
 }

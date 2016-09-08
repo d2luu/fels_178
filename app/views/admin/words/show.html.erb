@@ -1,0 +1,10 @@
+<% provide :title, t(:show_word) %>
+<div class="word">
+  <h4><b><%= t :category %>: <%= @word.category.name %></b></h4>
+  <h1><%= @word.content %></h1>
+  <div class="answers_field">
+    <ul>
+      <%= render @word.answers %>
+    </ul>
+  </div>
+</div>

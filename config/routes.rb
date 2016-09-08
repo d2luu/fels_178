@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root controller: :static_pages, action: :home, as: :root
     resources :categories
+    resources :words, except: :update
   end
 end

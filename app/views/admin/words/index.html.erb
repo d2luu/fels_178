@@ -1,0 +1,30 @@
+<% provide :title, t(:all_words) %>
+<h1><%= t :all_words %></h1>
+
+<%= form_tag admin_words_path, method: :get, class: "dn-admin-cate-form" do %>
+  <%= label_tag :category %>
+  <%= select_tag :category,
+    options_from_collection_for_select(@categories, "id", "name"),
+    include_blank: true, class: "btn btn-default dn-admin-cate-select" %>
+  <button class="btn" type="submit">
+    <span class="fa fa-search"></span>
+  </button>
+  <%= link_to t(:create), new_admin_word_path,
+    class: "btn btn-primary pull-right btn-sm" %>
+<% end %>
+
+<div class="panel-body">
+  <table class="table pretty">
+    <thead>
+      <th><%= sortable t "word.category" %></th>
+      <th><%= sortable t "word.content" %></th>
+      <th class="action"><%= t :action %></th>
+    </thead>
+    <% if @words.blank? %>
+      <td><i><b><%= t :no_word_in_category %></b></i></td>
+    <% else %>
+      <%= render @words %>
+    <% end %>
+  </table>
+</div>
+<%= will_paginate %>
