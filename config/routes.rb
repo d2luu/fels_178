@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show, :index]
 
+  resources :lessons, except: [:edit, :new, :destroy]
+
   namespace :admin do
     root controller: :static_pages, action: :home, as: :root
     resources :categories

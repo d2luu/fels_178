@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @lesson = @category.lessons.new
     @words = @category.words
   end
 

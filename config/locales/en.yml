@@ -24,6 +24,9 @@ en:
     search: "Search"
     filter: "Filter"
     do_lesson: "Do lesson"
+    start: "Start"
+    finish: "Finish"
+    update_fails: "Update fails"
 
   word:
     search_word:
@@ -78,6 +81,8 @@ en:
   login_warning: "Please log in"
   notice:
     not_category: "Can't find category"
+    not_lesson: "Can't find lesson"
+
   words:
     not_found: "Word not found"
     new_word: "New word"
@@ -92,10 +97,12 @@ en:
     category: "Category"
     created_at: "Created at"
     update_at: "Update at"
+
   show_word: "Word"
   no_word_in_category: "No word in category"
   destroy_sucess: "Destroy success"
   sure: "Are you sure?"
+
   create_fail: "Create fail"
   profile_updated: "Update profile success"
   delete_self: "Can't delete yourself"
@@ -106,3 +113,7 @@ en:
   edit_word: "Edit Word"
   save_change: "Save change"
   user_fails: "User not found"
+
+  lesson:
+    submit_btn: "Submit"
+
