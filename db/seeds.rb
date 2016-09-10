@@ -49,7 +49,8 @@ Result.create lesson_id: "1",
   name  = Faker::Name.name
   email = "user-#{n+1}@gmail.com"
   password = "1"
+  role = 0
   User.create! name: name, email: email, password: password,
-    password_confirmation: password
+    password_confirmation: password, role: role
 end
 

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :lessons, except: [:edit, :new, :destroy]
 
   namespace :admin do
-    root controller: :static_pages, action: :home, as: :root
+    root controller: :dashboard, action: :index, as: :root
     resources :categories
     resources :words
     resources :users, only: [:index, :destroy]

@@ -324,3 +324,52 @@ todo-list>li>input[type="checkbox"] {
   margin-right: 10px;
   margin-top: -2px;
 }
+
+.correct_answer {
+  @extend .well;
+  background-color: #78cc7b
+}
+
+.true_answer {
+  background-color: #78cc7b
+}
+
+.small-box {
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1)
+}
+
+.small-box > .inner {
+  padding: 10px
+}
+
+.small-box > .small-box-footer {
+  position: relative;
+  text-align: center;
+  padding: 3px 0;
+  color: #fff;
+  color: rgba(255,255,255,0.8);
+  display: block;
+  z-index: 10;
+  background: rgba(0,0,0,0.1);
+  text-decoration: none
+}
+
+.bg-yellow {
+  background-color: #78cc7b
+}
+
+.bg-green {
+  background-color: #ccb778
+}
+
+.bg-blue {
+  background-color: #8d78cc
+}
+
+.bg-white {
+  background-color: #338dc3
+}
