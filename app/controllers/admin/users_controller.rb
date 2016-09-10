@@ -7,7 +7,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    if current_user? @user
+    if current_user.current_user? @user
       flash[:danger] = t :delete_self
     else
       @user.destroy

@@ -8,5 +8,51 @@
     <%= link_to t("delete"), admin_category_path(@category),
       method: :delete, data: {confirm: t("flash.confirm")},
       class: "btn btn-danger" %>
+    <p><%= t :number_of_word %> : <%= @words.count %></p>
+  </div>
+  <div class="text-center">
+  <%= link_to t(:create_new_word), new_admin_word_path,
+    class: "btn btn-primary" %>
   </div>
 </div>
+
+<div class="panel-body">
+  <h3><%= t :word_list %></h3>
+  <table class="table pretty">
+    <thead>
+      <th><%= t "word.content" %></th>
+      <th><%= t "word.answer" %></th>
+      <th class="action"><%= t :action %></th>
+    </thead>
+    <% if @words.blank? %>
+      <td><i><b><%= t :no_word_in_category %></b></i></td>
+    <% else %>
+    <tbody>
+      <% @words.each do |word| %>
+        <tr>
+          <td><%= link_to word.content, admin_word_path(word) %></td>
+          <td>
+            <% word.answers.each do |word_answer| %>
+              <% if word_answer.is_correct? %>
+                <%= t "words.true_answer" %>:
+                <%= word_answer.content %><br>
+              <% else %>
+                <%= t "words.wrong_answer" %>:
+                <%= word_answer.content %><br>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to t("button.edit"), edit_admin_word_path(word),
+              class: "btn btn-success" %>
+            <%= link_to t("button.delete"), admin_word_path(word),
+              method: :delete, data: {confirm: t("flash.confirm")},
+              class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+    <% end %>
+  </table>
+</div>
+<%= will_paginate @words %>

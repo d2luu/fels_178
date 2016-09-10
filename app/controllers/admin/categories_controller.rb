@@ -10,12 +10,14 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
+    @words = @category.words
+    @words = @words.paginate(page: params[:page]).per_page Settings.page_size
   end
 
   def create
     @category = Category.new category_params
     if @category.save
-      redirect_to admin_root_path
+      redirect_to admin_categories_path
       flash[:success] = t "categories.success"
     else
       flash[:danger] = t "categories.create_fails"

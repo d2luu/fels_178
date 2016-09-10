@@ -1,0 +1,58 @@
+<h1><%= t :manage_system %></h1>
+<div class="row">
+  <div class="col-md-3 col-xs-6">
+    <div class="small-box bg-yellow">
+      <div class="inner text-center">
+        <h3><%= @users.count %></h3>
+        <p><%= t "admin.user" %></p>
+      </div>
+      <div class="icon">
+        <i class="glyphicon glyphicon-user"></i>
+      </div>
+      <%= link_to t(:more_info), admin_users_path,
+        class: "small-box-footer" %>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-xs-6 ">
+    <div class="small-box bg-green">
+      <div class="inner text-center">
+        <h3><%= @words.count %></h3>
+        <p><%= t "admin.word" %></p>
+      </div>
+      <div class="icon">
+        <i class="glyphicon glyphicon-list-alt"></i>
+      </div>
+      <%= link_to t(:more_info), admin_words_path,
+        class: "small-box-footer" %>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-xs-6 ">
+    <div class="small-box bg-blue">
+      <div class="inner text-center">
+        <h3><%= @categories.count %></h3>
+        <p><%= t "admin.category" %></p>
+      </div>
+      <div class="icon">
+        <i class="glyphicon glyphicon-list-alt"></i>
+      </div>
+      <%= link_to t(:more_info), admin_categories_path,
+        class: "small-box-footer" %>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-xs-6 ">
+    <div class="small-box bg-white">
+      <div class="inner text-center">
+        <h3><%= t "admin.profile1" %></h3>
+        <h3><%= t "admin.profile" %></h3>
+      </div>
+      <div class="icon">
+        <i class="glyphicon glyphicon-list-alt"></i>
+      </div>
+      <%= link_to t(:more_info), user_path(current_user),
+        class: "small-box-footer" %>
+    </div>
+  </div>
+</div>
