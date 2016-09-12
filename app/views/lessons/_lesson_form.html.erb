@@ -1,0 +1,18 @@
+<%= form_for @lesson do |f| %>
+  <ol>
+    <%= f.hidden_field :lesson_id, value: @lesson.id %>
+    <%= f.hidden_field :status, value: :finished %>
+    <%= f.fields_for :results do |t| %>
+      <li><%= t.label t.object.word.content %></li>
+      <div class="row">
+        <% t.object.word.answers.each do |answer| %>
+          <div class="col-md-8 col-md-offset-2">
+            <%= answer.content %>
+            <%= t.radio_button :answer_id, answer.id %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <%= f.submit t("lesson.submit_btn"), class: "btn btn-primary", method: :patch %>
+  </ol>
+<% end %>

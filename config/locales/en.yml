@@ -118,6 +118,11 @@ en:
 
   lesson:
     submit_btn: "Submit"
+    finish: "Finish?"
+    result: "Result"
+    word: "Word"
+    answer: "Your answer"
+    score: "Your score : "
   create_new_word: "Create new word"
   more_info: "More infor"
   number_of_word: "Number of word"

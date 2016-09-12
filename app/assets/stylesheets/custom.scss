@@ -1,6 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+body {
+  padding-top: 50px;
+  position: relative;
+  margin: 0;
+  padding-bottom: 60px;
+  min-height: 100%;
+}
 /* universal */
 
 section {
@@ -71,7 +82,7 @@ footer {
   color: $gray-light;
   position: absolute;
   bottom: 0px;
-  left: 0px;
+  z-index: 20;
   a {
     color: $gray;
     &:hover {

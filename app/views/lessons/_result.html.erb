@@ -1,0 +1,21 @@
+<div class="text-center ">
+  <h1>
+    <%= t "lesson.score" %>
+    <%= @lesson.count_answer %>
+  </h1>
+</div>
+<table class="table">
+  <thead>
+    <th><%= t "lesson.word" %></th>
+    <th><%= t "lesson.answer" %></th>
+  </thead>
+  <tbody>
+    <% @lesson.results.each do |result| %>
+      <tr>
+        <td><%= result.word.content %></td>
+        <td><%= result.answer.present? ?
+          result.answer.content : "" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

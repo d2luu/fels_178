@@ -20,6 +20,7 @@ class Word < ApplicationRecord
   QUERY_NOT_LEARNED = "id not in (select results.word_id from
     results join lessons on results.lesson_id = lessons.id
     where lessons.user_id = ?)"
+
   scope :word_by_category, ->category_id{where category_id: category_id}
 
   scope :search_word, -> search_name {
@@ -33,10 +34,6 @@ class Word < ApplicationRecord
 
   scope :not_learned, -> user_id{
     where QUERY_NOT_LEARNED, user_id
-  }
-
-  scope :filter_word, ->user_id{
-    where SEARCH, user_id
   }
 
   class << self
