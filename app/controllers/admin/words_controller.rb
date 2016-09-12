@@ -23,7 +23,7 @@ class Admin::WordsController < ApplicationController
 
   def create
     @word = Word.new word_params
-    if @word.save
+    if @word.check_have_correct_answer && @word.save
       flash[:success] = t :created_word
       redirect_to admin_words_path @word
     else
