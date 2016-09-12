@@ -25,7 +25,7 @@ class Admin::WordsController < ApplicationController
     @word = Word.new word_params
     if @word.check_have_correct_answer && @word.save
       flash[:success] = t :created_word
-      redirect_to admin_words_path @word
+      redirect_to admin_category_path @word.category
     else
       flash[:danger] = t :create_fail
       @categories = Category.all
@@ -49,7 +49,7 @@ class Admin::WordsController < ApplicationController
   def destroy
     if @word.destroy
       flash[:success] = t :destroy_sucess
-      redirect_to admin_words_path
+      redirect_to admin_category_path @word.category
     else
       flash[:danger] = t :destroy_fail
       redirect_to admin_words_path
@@ -65,7 +65,7 @@ class Admin::WordsController < ApplicationController
   def find_word
     @word = Word.find_by_id params[:id]
     if @word.nil?
-      flash[:danger] = t "word.not_found"
+      flash[:danger] = t "words.not_found"
       redirect_to admin_words_path
     end
   end

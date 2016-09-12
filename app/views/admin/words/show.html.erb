@@ -1,7 +1,15 @@
 <% provide :title, t(:show_word) %>
 <div class="word">
-  <h4><b><%= t :category %>: <%= @word.category.name %></b></h4>
+  <h4><b><%= t :category %>: <%= link_to @word.category.name,
+    admin_category_path(@word.category) %></b></h4>
   <h1><%= @word.content %></h1>
+  <div>
+    <%= link_to t("button.edit"), edit_admin_word_path(@word),
+      class: "btn btn-success" %>
+    <%= link_to t("button.delete"), admin_word_path(@word),
+      method: :delete, data: {confirm: t("flash.confirm")},
+      class: "btn btn-danger" %>
+  </div>
   <div class="answers_field">
     <ul>
       <%= render @word.answers %>
