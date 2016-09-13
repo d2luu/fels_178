@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   resources :lessons, except: [:edit, :new, :destroy]
 
+  resources :relationships, only: [:create, :destroy, :index]
+
   namespace :admin do
     root controller: :dashboard, action: :index, as: :root
     resources :categories

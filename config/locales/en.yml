@@ -57,6 +57,7 @@ en:
   button_create: "Create my account"
   button_signup: "Sign up now!"
   flash:
+    not_found: "User not found"
     not_admin: "You are not admin"
     fail: "Update fail"
     confirm: "Are you sure?"
@@ -136,4 +137,15 @@ en:
     profile1: "Your"
     profile: "Profile"
   manage_system: "Manage Traning System"
+  user_name: "Name"
+  relationship:
+    following: "Following"
+    followers: "Followers"
+    followed: "This user's already followed"
+    unfollowed: "This user isn't followed"
+  action:
+    follow: "follow"
+    unfollow: "unfollow"
+  following: "Following"
+  follower: "Followers"
 

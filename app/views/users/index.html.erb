@@ -1,0 +1,21 @@
+<% provide :title, t(:all_users) %>
+<h1><%= t :all_users %></h1>
+<div class="panel-body">
+<%= will_paginate %>
+  <table class="table">
+    <thead>
+      <th><%= t "user_name" %></th>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to gravatar_for(user), user %>
+            <%= link_to user.name, user %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= will_paginate %>
