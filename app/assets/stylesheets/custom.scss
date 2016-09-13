@@ -396,3 +396,23 @@ todo-list>li>input[type="checkbox"] {
     background-color: #ff7d84;
   }
 }
+
+.dn-front-group {
+  font-size: 16px !important;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+
+.dn-form-control {
+  border-radius: 4px!important;
+}
+
+.dn-front-user-btn {
+  width: 35%;
+  display: block;
+  margin: 0 auto;
+  padding: 8px 15px;
+}
