@@ -27,6 +27,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "profile_updated"
+      redirect_to user_path @user
+    else
+      flash[:danger] = t "containt.update_fails"
+      render :edit
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit :name, :email, :password,

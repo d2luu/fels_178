@@ -57,6 +57,12 @@
       </a>
       <ul id="account" class="panel-collapse collapse">
         <li>
+          <%= link_to t("navbar.profile"), user_path(current_user) %>
+        </li>
+        <li>
+          <%= link_to t("navbar.edit"), edit_user_path(current_user) %>
+        </li>
+        <li>
           <%= link_to t("navbar.logout"), logout_path, method: :delete %>
         </li>
       </ul>

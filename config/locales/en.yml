@@ -7,7 +7,7 @@ en:
     language: "Language"
     login: "Log In"
     logout: "Logout"
-    setting: "Setting"
+    setting: "Edit"
     profile: "Profile"
     account: "Account"
     home: "Home"
@@ -157,4 +157,5 @@ en:
     unfollow: "unfollow"
   following: "Following"
   follower: "Followers"
-
+  edit_user: "Edit"
+  passconfirm: "Password confirm"
