@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require jquery.countdown
+//= require jquery.countdown-es
 //= require_tree .
 var flash = function(){
   setTimeout(function(){

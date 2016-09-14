@@ -1,9 +1,10 @@
 class LessonsController < ApplicationController
   before_action :logged_in_user
   before_action :find_lesson, only: [:show, :update]
-  before_action :check_lesson_status, only: :update
 
   def show
+    check_lesson_status
+    @remaining_time = @lesson.remaining_time
   end
 
   def create
@@ -19,9 +20,10 @@ class LessonsController < ApplicationController
 
   def update
     if @lesson.update_attributes lesson_params
-      flash[:success] = t "containt.finish"
+      check_lesson_status
+      flash[:success] = t "lesson.finish"
     else
-      flash[:danger] = t "containt.update_fails"
+      flash[:danger] = t "lesson.update_fails"
     end
     redirect_to lesson_path @lesson
   end
@@ -42,9 +44,12 @@ class LessonsController < ApplicationController
   end
 
   def check_lesson_status
-    case @lesson.status
-    when :finished
-      flash[:success] = t "lesson.result"
+    if @lesson.init?
+      @lesson.update_attributes status: :testing, started_at: Time.zone.now
+    elsif @lesson.testing? && @lesson.time_out?
+      flash[:danger] = t "lesson.time_out"
+      @lesson.finished!
+      redirect_to lesson_path @lesson
     end
   end
 end
