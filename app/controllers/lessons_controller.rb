@@ -7,6 +7,13 @@ class LessonsController < ApplicationController
     @remaining_time = @lesson.remaining_time
   end
 
+  def index
+    @lessons = current_user.lessons.paginate page: params[:page], per_page: Settings.page
+    if @lessons.nil?
+      flash[:danger] = t "lesson.not_lesson"
+    end
+  end
+
   def create
     @lesson = current_user.lessons.new lesson_params
     if @lesson.save

@@ -1,0 +1,18 @@
+<% provide :title, t("lesson.all_lesson") %>
+<h1 class="text-center"><%= t "header.lesson" %></h1>
+<table class="table">
+  <thead>
+    <th><%= t "lesson.category" %></th>
+    <th><%= t "lesson.header_score" %></th>
+  </thead>
+  <tbody>
+    <% @lessons.each do |lesson| %>
+      <tr>
+        <td><%= lesson.category.name %></td>
+        <td><%= lesson.count_answer %></td>
+        <td><%= link_to t("lesson.show"), lesson %></td>
+      </tr>
+    <% end %>
+    <%= will_paginate %>
+  </tbody>
+</table>
