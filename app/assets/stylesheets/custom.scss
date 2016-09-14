@@ -384,3 +384,15 @@ todo-list>li>input[type="checkbox"] {
 .bg-white {
   background-color: #338dc3
 }
+
+#clock {
+  height: 55px;
+}
+.lesson-show {
+  .true {
+    background-color: #6ad86a;
+  }
+  .false {
+    background-color: #ff7d84;
+  }
+}

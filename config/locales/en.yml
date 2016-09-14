@@ -26,7 +26,6 @@ en:
     do_lesson: "Do lesson"
     start: "Start"
     finish: "Finish"
-    update_fails: "Update fails"
 
   word:
     answer: "Answer"
@@ -38,8 +37,6 @@ en:
       not_learned: "Not learned"
       learned: "Learned"
       all_word: "All word"
-  lesson:
-    save: "Save"
 
   signup_page:
     signup: "Sign up"
@@ -119,11 +116,19 @@ en:
 
   lesson:
     submit_btn: "Submit"
-    finish: "Finish?"
+    finish: "Finish"
     result: "Result"
     word: "Word"
     answer: "Your answer"
     score: "Your score : "
+    remaining_time: "Time remaining"
+    time_out: "Time out"
+    save: "Save"
+    update_fails: "Update fails"
+    is_correct: "Correct?"
+    wrong: "Wrong"
+    right: "Correct"
+
   create_new_word: "Create new word"
   more_info: "More infor"
   number_of_word: "Number of word"

@@ -13,4 +13,8 @@ module ApplicationHelper
     end
     link_to title, {sort: column, direction: direction}
   end
+
+  def set_class_result answer
+    answer && answer.is_correct? ? "true" : "false"
+  end
 end

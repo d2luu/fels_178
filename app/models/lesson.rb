@@ -7,11 +7,19 @@ class Lesson < ApplicationRecord
 
   delegate :name, to: :category, prefix: true, allow_nil: true
   after_create :create_result_for_lesson
-  enum status: [:init, :finished]
+  enum status: [:init, :testing, :finished]
   accepts_nested_attributes_for :results, allow_destroy: true
 
   def count_answer
     results.select{|result| result.answer && result.answer.is_correct?}.size
+  end
+
+  def remaining_time
+    remaining_time = Settings.time_for_lesson - (Time.zone.now - started_at).to_i
+  end
+
+  def time_out?
+    Time.zone.now > started_at + Settings.time_for_lesson
   end
 
   private

@@ -5,6 +5,7 @@ class CreateLessons < ActiveRecord::Migration[5.0]
       t.references :category, index: true, foreign_key: true
       t.integer :status, default: 0
       t.integer :score, default: 0
+      t.datetime :started_at
 
       t.timestamps
     end

@@ -1,20 +1,23 @@
 <div class="text-center ">
   <h1>
     <%= t "lesson.score" %>
-    <%= @lesson.count_answer %>
+    <%= @lesson.count_answer %> / <%= @lesson.results.count %>
   </h1>
 </div>
-<table class="table">
+<table class="table lesson-show">
   <thead>
     <th><%= t "lesson.word" %></th>
     <th><%= t "lesson.answer" %></th>
+    <th><%= t "lesson.is_correct" %></th>
   </thead>
   <tbody>
     <% @lesson.results.each do |result| %>
-      <tr>
+      <tr class="<%= set_class_result result.answer %>">
         <td><%= result.word.content %></td>
         <td><%= result.answer.present? ?
           result.answer.content : "" %></td>
+        <td><%= result.answer && result.answer.is_correct? ?
+          t("lesson.right") : t("lesson.wrong") %></td>
       </tr>
     <% end %>
   </tbody>
